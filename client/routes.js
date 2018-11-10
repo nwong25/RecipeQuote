@@ -4,6 +4,8 @@ import {withRouter, Route, Switch} from 'react-router-dom'
 import PropTypes from 'prop-types'
 import {Login, Signup, UserHome} from './components'
 import {me} from './store'
+import SearchBarResults from './components/searchBarResults'
+import SingleRecipe from './components/singleRecipe'
 
 /**
  * COMPONENT
@@ -15,12 +17,18 @@ class Routes extends Component {
 
   render() {
     const {isLoggedIn} = this.props
+    console.log('routeeeeee', this.props)
 
     return (
       <Switch>
         {/* Routes placed here are available to all visitors */}
+        {/* <Route path="/recipes/search/:idx" component={SingleRecipe} /> */}
+        <Route path="/recipes/search/0" component={SingleRecipe} />
+
+        <Route exact path="/:search" component={SearchBarResults} />
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
+
         {isLoggedIn && (
           <Switch>
             {/* Routes placed here are only available after logging in */}
@@ -41,6 +49,8 @@ const mapState = state => {
   return {
     // Being 'logged in' for our purposes will be defined has having a state.user that has a truthy id.
     // Otherwise, state.user will be an empty object, and state.user.id will be falsey
+    recipeSearchInput: state.recipe.recipeSearchInput,
+    recipe: state.recipe.recipes,
     isLoggedIn: !!state.user.id
   }
 }
