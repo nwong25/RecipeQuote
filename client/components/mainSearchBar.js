@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import {typeSearchInput, fetchRecipes, getData} from '../store/recipe'
 import {Link, Redirect, withRouter} from 'react-router-dom'
 
-export class SearchBar extends Component {
+export class MainSearchBar extends Component {
   constructor() {
     super()
     this.state = {
@@ -32,30 +32,24 @@ export class SearchBar extends Component {
   render() {
     const {recipeSearchInput} = this.state
     return (
-      <div>
-        <form id="search-bar" onSubmit={this.handleSubmit}>
-          <div className="search-bar-form">
+      <div className="container">
+        <div className="innerContainer" />
+        <form id="main-search-bar" onSubmit={this.handleSubmit}>
+          <div className="main-search-bar-form">
             <input
-              className="nav-bar-textbox"
+              className="form-control-textbox"
               type="text"
               name="recipeSearchInput"
               value={recipeSearchInput}
               onChange={this.handleChange}
               placeholder="Find A Recipe Now"
             />
+            <br />
           </div>
-          <button className="nav-search-btn" type="submit">
+          <button className="search-btn" type="submit">
             Search
-            {/* <Link to={`${this.state.recipeSearchInput}`}>Search</Link> */}
           </button>
         </form>
-        {/* {this.props.recipes.length > 0 && (
-          <Redirect
-            to={{
-              pathname: '/search'
-            }}
-          />
-        )} */}
       </div>
     )
   }
@@ -77,5 +71,5 @@ const mapDispatchToProps = dispatch => {
 }
 
 export default withRouter(
-  connect(mapStateToProps, mapDispatchToProps)(SearchBar)
+  connect(mapStateToProps, mapDispatchToProps)(MainSearchBar)
 )

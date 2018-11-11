@@ -17,6 +17,8 @@ const selectedRecipe = {
   }
 }
 
+let ingred = {}
+
 const doNotInclude = [
   'and',
   'of',
@@ -82,15 +84,48 @@ export class SingleRecipe extends Component {
     super()
     this.state = {}
     this.handleChange = this.handleChange.bind(this)
+    // this.handleSubmit = this.handleSubmit.bind(this)
   }
   componentDidMount() {
     this.props.loadFood()
+    // {
+    //   selectedRecipe.recipe.ingredientLines.map((ingredient, idx) => {
+    //     const words = ingredient.toLowerCase().split(' ')
+
+    //     const referenceWord = words
+    //       .filter(word => {
+    //         return !doNotInclude.includes(word) && !/\d/.test(word)
+    //       })
+    //       .join(' ')
+
+    //     const foodLookUp = this.props.food
+    //       .reduce((basket, foodItem) => {
+    //         if (foodItem.food.includes(referenceWord)) {
+    //           basket.push(foodItem.price)
+    //         }
+    //         return basket
+    //       }, [])
+    //       .join('')
+    //       .slice(1, 5)
+    //     ingred[ingredient] = foodLookUp
+    //     this.props.postRecipeCost((ingred[ingredient] = foodLookUp))
+    //   })
+    // }
+    // this.setState(ingred)
   }
   handleChange(event) {
+    ingred[event.target.name] = event.target.value
     this.setState({
       [event.target.name]: event.target.value
     })
     this.props.postRecipeCost(this.state)
+  }
+
+  handleSubmit(event) {
+    event.preventDefault()
+    this.setState({
+      [event.target.name]: ''
+    })
   }
 
   render() {
@@ -99,104 +134,134 @@ export class SingleRecipe extends Component {
     let totalCost = []
     let stateTotal
     let allCost
+    console.log('whattttttup', ingred)
+    console.log('the stateeeee', this.state)
+    console.log('recipeCost', this.props.recipeCost)
+    {
+      selectedRecipe.recipe.ingredientLines.map((ingredient, idx) => {
+        const words = ingredient.toLowerCase().split(' ')
+
+        const referenceWord = words
+          .filter(word => {
+            return !doNotInclude.includes(word) && !/\d/.test(word)
+          })
+          .join(' ')
+
+        const foodLookUp = foodList
+          .reduce((basket, foodItem) => {
+            if (foodItem.food.includes(referenceWord)) {
+              basket.push(foodItem.price)
+            }
+            return basket
+          }, [])
+          .join('')
+          .slice(1, 5)
+
+        ingred[ingredient] = foodLookUp
+      })
+    }
+
     return (
-      <div className="sides">
-        <ul className="left-side">
-          <div className="wrapper">
-            <h2>{selectedRecipe.recipe.label}</h2>
+      <div className="container">
+        <div className="wrapper">
+          <h2 className="ingredient-name">{selectedRecipe.recipe.label}</h2>
+          <div className="image-div">
             <img className="recipe-image" src={selectedRecipe.recipe.image} />
-            <table>
-              <thead>
-                <tr>
-                  <td>Ingredients</td>
-                  <td>Estimated Cost</td>
-                </tr>
-              </thead>
-              {selectedRecipe.recipe.ingredientLines.map((ingredient, idx) => {
-                const words = ingredient.toLowerCase().split(' ')
-
-                const referenceWord = words
-                  .filter(word => {
-                    return !doNotInclude.includes(word) && !/\d/.test(word)
-                  })
-                  .join(' ')
-
-                const foodLookUp = foodList
-                  .reduce((basket, foodItem) => {
-                    if (foodItem.food.includes(referenceWord)) {
-                      basket.push(foodItem.price)
-                    }
-                    return basket
-                  }, [])
-                  .join('')
-                  .slice(1, 5)
-
-                let price
-
-                const update = foodLookUp
-                  ? ((price = `$${Number(foodLookUp).toFixed(2)}`),
-                    totalCost.push(Number(foodLookUp)),
-                    this.props.postRecipeCost({
-                      [ingredient]: foodLookUp
-                    }))
-                  : // (price = (
-                    //   <form id="search-bar">
-                    //     <div className="search-bar-form">
-                    //       <input
-                    //         className="form-control textbox"
-                    //         type="text"
-                    //         name={foodLookUp}
-                    //         onChange={this.handleChange}
-                    //         placeholder="Enter Estimated Price"
-                    //       />
-                    //     </div>
-                    //   </form>
-                    // ))
-                    (price = (
-                      <form id="search-bar">
-                        <div className="search-bar-form">
-                          <input
-                            className="form-control textbox"
-                            type="text"
-                            name={ingredient}
-                            onChange={this.handleChange}
-                            placeholder="Enter Estimated Price"
-                          />
-                        </div>
-                      </form>
-                    ))
-
-                stateTotal = Object.values(this.state).reduce(
-                  (basket, currentValue) => {
-                    basket = basket + Number(currentValue)
-                    return basket
-                  },
-                  0
-                )
-
-                console.log('actualpopulationcost', totalCost)
-
-                allCost = totalCost.reduce((basket, currentValue) => {
-                  basket = basket + currentValue
-                  return basket
-                }, stateTotal)
-                console.log('the real total', allCost)
-                return (
-                  <tbody key={ingredient}>
-                    <tr>
-                      <td>{ingredient}</td>
-                      <td>{price}</td>
-                      <td>
-                        <button className="x-button">X</button>
-                      </td>
-                    </tr>
-                  </tbody>
-                )
-              })}
-            </table>
           </div>
-        </ul>
-        <div>total cost ${allCost.toFixed(2)}</div>
+          <table id="table">
+            <thead>
+              <tr>
+                <th className="table-label">Ingredients</th>
+                <th className="table-label">Estimated Cost</th>
+              </tr>
+            </thead>
+            {selectedRecipe.recipe.ingredientLines.map((ingredient, idx) => {
+              const words = ingredient.toLowerCase().split(' ')
+
+              const referenceWord = words
+                .filter(word => {
+                  return !doNotInclude.includes(word) && !/\d/.test(word)
+                })
+                .join(' ')
+
+              const foodLookUp = foodList
+                .reduce((basket, foodItem) => {
+                  if (foodItem.food.includes(referenceWord)) {
+                    basket.push(foodItem.price)
+                  }
+                  return basket
+                }, [])
+                .join('')
+                .slice(1, 5)
+
+              let price
+
+              const update = foodLookUp
+                ? ((price = `$${Number(foodLookUp).toFixed(2)}`),
+                  totalCost.push(Number(foodLookUp)))
+                : // ((price = (
+                  //   <form id="search-bar" onSubmit={this.handleSubmit}>
+                  //     <div className="search-bar-form">
+                  //       <input
+                  //         className="form-control textbox"
+                  //         type="text"
+                  //         value={this.state.ingredient}
+                  //         name={ingredient}
+                  //         onChange={this.handleChange}
+                  //         placeholder="Enter Estimated Price"
+                  //       />
+                  //     </div>
+                  //   </form>
+                  // )),
+                  (price = (
+                    <div className="search-bar-form">
+                      <input
+                        className="form-control textbox"
+                        type="text"
+                        name={ingredient}
+                        value={this.state.ingredient}
+                        onChange={this.handleChange}
+                        placeholder="Enter Estimated Price"
+                      />
+                    </div>
+                  ))
+
+              stateTotal = Object.values(this.state).reduce(
+                (basket, currentValue) => {
+                  basket = basket + Number(currentValue)
+                  return basket
+                },
+                0
+              )
+
+              allCost = totalCost.reduce((basket, currentValue) => {
+                basket = basket + currentValue
+                return basket
+              }, stateTotal)
+              console.log('the real total', allCost)
+              return (
+                <tbody key={ingredient}>
+                  <tr>
+                    <td className="info">{ingredient}</td>
+                    <td className="info">{price}</td>
+                    <td>
+                      <button
+                        onClick={() => this.setState({[ingredient]: ''})}
+                        className="x-button"
+                      >
+                        X
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              )
+            })}
+          </table>
+          <p />
+          <div className="total-cost">
+            <h3>Estimated Total Cost ${allCost.toFixed(2)}</h3>
+          </div>
+        </div>
       </div>
     )
   }
@@ -204,7 +269,8 @@ export class SingleRecipe extends Component {
 const mapStateToProps = state => ({
   recipeSearchInput: state.recipe.recipeSearchInput,
   recipe: state.recipe.recipes,
-  food: state.food
+  food: state.food,
+  recipeCost: state.recipe.recipeCost
 })
 
 const mapDispatchToProps = dispatch => ({

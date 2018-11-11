@@ -6,6 +6,8 @@ import {Login, Signup, UserHome} from './components'
 import {me} from './store'
 import SearchBarResults from './components/searchBarResults'
 import SingleRecipe from './components/singleRecipe'
+import searchBar from './components/searchBar'
+import MainSearchBar from './components/mainSearchBar'
 
 /**
  * COMPONENT
@@ -23,11 +25,11 @@ class Routes extends Component {
       <Switch>
         {/* Routes placed here are available to all visitors */}
         {/* <Route path="/recipes/search/:idx" component={SingleRecipe} /> */}
+        <Route path="/login" component={Login} />
+        <Route path="/signup" component={Signup} />
         <Route path="/recipes/search/0" component={SingleRecipe} />
 
         <Route exact path="/:search" component={SearchBarResults} />
-        <Route path="/login" component={Login} />
-        <Route path="/signup" component={Signup} />
 
         {isLoggedIn && (
           <Switch>
@@ -36,6 +38,7 @@ class Routes extends Component {
           </Switch>
         )}
         {/* Displays our Login component as a fallback */}
+        <Route path="/" component={MainSearchBar} />
         <Route component={Login} />
       </Switch>
     )
