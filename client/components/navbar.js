@@ -1,41 +1,19 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
-import {logout} from '../store'
 import SearchBar from './searchBar'
 
-const Navbar = ({handleClick, isLoggedIn}) => (
+const Navbar = () => (
   <div className="nav-bar">
-    <h1 className="recipe-title">Recipe Quote</h1>
     <nav>
-      {isLoggedIn ? (
-        <div>
-          {/* The navbar will show these links after you log in */}
-          <Link to="/home" className="links">
-            Home
-          </Link>
-          <a href="#" onClick={handleClick}>
-            Logout
-          </a>
-        </div>
-      ) : (
-        <div>
-          {/* The navbar will show these links before you log in */}
-          {/* <Link to="/login" className="links">
-            Login
-          </Link>
-          <Link to="/signup" className="links">
-            Sign Up
-          </Link> */}
-          <Link to="/" className="links">
-            Home
-          </Link>
-        </div>
-      )}
+      <h1 className="recipe-title">Recipe Quote</h1>
+      <br />
       <div>
         <SearchBar />
       </div>
+      <Link to="/" className="links">
+        Home
+      </Link>
     </nav>
     <hr />
   </div>
@@ -44,24 +22,5 @@ const Navbar = ({handleClick, isLoggedIn}) => (
 /**
  * CONTAINER
  */
-const mapState = state => {
-  return {
-    isLoggedIn: !!state.user.id
-  }
-}
 
-const mapDispatch = dispatch => {
-  return {
-    handleClick: () => dispatch(logout())
-  }
-}
-
-export default connect(mapState, mapDispatch)(Navbar)
-
-/**
- * PROP TYPES
- */
-Navbar.propTypes = {
-  handleClick: PropTypes.func.isRequired,
-  isLoggedIn: PropTypes.bool.isRequired
-}
+export default connect(null, null)(Navbar)

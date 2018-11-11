@@ -130,7 +130,7 @@ export class SingleRecipe extends Component {
             <thead>
               <tr>
                 <th className="table-label">Ingredients</th>
-                <th className="table-label">Estimated Cost</th>
+                <th className="table-label">Estimated Initial Cost</th>
               </tr>
             </thead>
             {selectedRecipe.recipe.ingredientLines.map((ingredient, idx) => {
@@ -209,7 +209,7 @@ export class SingleRecipe extends Component {
             <div className="disclaimer">
               Please note ingredient prices may vary based on store and location
             </div>
-            <div>
+            <div className="div-button">
               <a href={selectedRecipe.recipe.url}>
                 <button className="visit-recipe">
                   See Recipe Instructions

@@ -1,5 +1,4 @@
 const db = require('../db')
-const User = require('./user')
 const Food = require('./food')
 
 /**
@@ -17,6 +16,5 @@ const Food = require('./food')
  */
 module.exports = {
   db,
-  User,
   Food
 }

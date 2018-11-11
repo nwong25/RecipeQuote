@@ -927,7 +927,7 @@ const foods = [
   {
     category: 'cheese',
     brand: 'wegmans food you feel good about cave-ripened',
-    food: 'medium brie cheese- buttery',
+    food: 'medium brie cheese',
     price: '$15.99/lb  1 each approx. 0.5 lb.'
   },
   {
@@ -1751,649 +1751,649 @@ const foods = [
     price: '$10.99  1 lb.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans',
     food: 'crescent rolls',
     price: '$1.49*  8 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans',
     food: 'biscuits, buttermilk',
     price: '$0.69  7.5 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans',
     food: 'jumbo flaky biscuits, buttermilk',
     price: '$1.19*  16 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans',
     food: 'cinnamon rolls with icing',
     price: '$1.49*  12.4 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans organic',
     food: 'salted butter sweet cream',
     price: '$4.99  1 lb.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans',
     food: 'salted butter sweet cream',
     price: '$2.49  1 lb.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans',
     food: 'butter, unsalted, sweet cream',
     price: '$2.49  1 lb.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans food you feel good about',
     food: 'spreadable butter with canola oil',
     price: '$3.29  15 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans',
     food: 'extra sharp cheddar cheese, white',
     price: '$6.49  32 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans',
     food: 'cheese sticks, mozzarella, family pack',
     price: '$8.99  48 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans',
     food: 'cheese, extra sharp cheddar, yellow',
     price: '$6.49  32 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans',
     food: 'low-moisture part-skim shredded mozzarella, family pack',
     price: '$11.49  80 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans organic food you feel good about',
     food: 'half & half, grade a pasteurized, homogenized',
     price: '$1.99  16 fl. oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans organic food you feel good about',
     food: 'half & half',
     price: '$3.49  1 qt.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans food you feel good about',
     food: 'ultra pasteurized half & half',
     price: '$1.69  1 pt.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans food you feel good about',
     food: 'half & half',
     price: '$1.19  16 fl. oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'oscar mayer',
     food: 'bologna',
     price: '$2.49  16 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'oscar mayer deli fresh',
     food: 'turkey breast, oven roasted',
     price: '$3.49  9 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'hillshire farm deli select',
     food: 'turkey breast, oven roasted, ultra thin',
     price: '$3.79  9 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: "land o'frost simply delicious",
     food: 'turkey breast, slow roasted',
     price: '$3.29  8 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: "kelchner's",
     food: 'horse-radish',
     price: '$2.79  6.5 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: "kelchner's",
     food: 'cocktail sauce',
     price: '$2.79  7 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: "kelchner's",
     food: 'cocktail sauce',
     price: '$5.49  16 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: "kelchner's",
     food: 'horseradish sauce, creamy',
     price: '$2.79  6 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans food you feel good about',
     food: 'small curd cottage cheese, 1% milkfat, family pack',
     price: '$3.99  48 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans organic food you feel good about',
     food: '2% milkfat cottage cheese, small curd',
     price: '$3.49  16 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans organic food you feel good about',
     food: '4% milkfat minimum cottage cheese, small curd',
     price: '$3.49  16 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans food you feel good about cheese',
     food: 'part skim ricotta',
     price: '$2.49  15 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans food you feel good about',
     food: 'original cream cheese, family pack',
     price: '$4.49  32 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans organic food you feel good about',
     food: 'cream cheese',
     price: '$2.99  8 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans food you feel good about',
     food: 'whipped cream cheese',
     price: '$2.79  12 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans food you feel good about',
     food: 'cream cheese, original',
     price: '$1.29*  8 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans',
     food: 'fill & bake pie crusts, 9 inch',
     price: '$1.99*  15 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans',
     food: 'chocolate vanilla swirl pudding',
     price: '$2.99  23.25 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans',
     food: 'sugar free chocolate vanilla swirl pudding',
     price: '$2.99  23.25 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans food you feel good about',
     food: 'homestyle rice pudding',
     price: '$2.29  22 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans food you feel good about',
     food: 'hummus, family pack',
     price: '$5.99  32 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans food you feel good about',
     food: 'hummus, family pack',
     price: '$5.99  24 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans food you feel good about',
     food: 'roasted red pepper hummus, family pack',
     price: '$5.99  32 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans food you feel good about',
     food: 'roasted garlic hummus, family pack',
     price: '$5.99  32 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans organic food you feel good about',
     food: 'large brown eggs',
     price: '$3.99  24 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans food you feel good about',
     food: 'three dozen large eggs, family pack',
     price: '$4.19  72 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans organic food you feel good about',
     food: 'extra large brown eggs',
     price: '$4.19  27 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans organic food you feel good about',
     food: 'cage free grade a jumbo brown eggs',
     price: '$5.29  30 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'del monte sunfresh',
-    food: 'red grapefruit, no sugar added',
+    food: 'red grapefruit',
     price: '$8.49  64 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'del monte sun fresh',
     food: 'red grapefruit, in extra light syrup',
     price: '$8.49  64 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'del monte fruit naturals',
-    food: 'red grapefruit, no sugar added',
+    food: 'red grapefruit',
     price: '$1.59  6.5 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'del monte fruit naturals',
     food: 'grapefruit, red',
     price: '$1.59  7 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans organic food you feel good about',
     food: 'skinless uncured chicken hot dogs',
     price: '$4.99  12 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans',
     food: 'sliced pepperoni, italian style',
     price: '$2.49  6 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans',
     food: 'sliced pepperoni, turkey',
     price: '$2.49  4.5 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans',
     food: 'italian style pepperoni',
     price: '$3.29  7 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans organic food you feel good about',
     food: 'premium orange juice, original, pulp free',
     price: '$4.49  59 fl. oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans food you feel good about',
     food: 'no pulp premium orange juice, family pack',
     price: '$4.79  128 fl. oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans food you feel good about',
     food: 'orange juice',
     price: '$3.89  128 fl. oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans organic food you feel good about',
     food: 'premiun orange juice, calcium & vitamin d',
     price: '$4.49  59 fl. oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans food you feel good about',
     food: '2% reduced fat milk',
     price: '$2.09  1 gal.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans food you feel good about',
     food: '1% low fat milk',
     price: '$1.79  1 gal.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans food you feel good about',
     food: 'fat free milk',
     price: '$1.69  1 gal.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans food you feel good about',
     food: 'whole milk',
     price: '$2.09  1 gal.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'rice dream',
     food: 'rice drink, enriched, original',
     price: '$3.99  64 fl. oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'rice dream',
     food: 'rice drink, enriched, vanilla',
     price: '$3.99  64 fl. oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'horizon organic',
     food: 'eggnog, organic lowfat',
     price: '$3.99  1 qt.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'upstate farms',
     food: 'egg nog',
     price: '$2.79  1 qt.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'upstate farms',
     food: 'egg nog',
     price: '$1.79  1 pt.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'lactaid',
     food: 'eggnog',
     price: '$3.19  32 fl. oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans italian classics',
     food: 'cheese tortellini, family pack',
     price: '$9.49  40 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans italian classics',
     food: 'cheese ravioli, family pack',
     price: '$9.49  40 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans italian classics',
     food: 'potato gnocchi, family pack',
     price: '$6.99  32 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans italian classics',
     food: 'marinara sauce, family pack',
     price: '$8.99  42 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans food you feel good about',
     food: 'refrigerated kosher dill sandwich slices pickles',
     price: '$2.99  24 fl. oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans food you feel good about',
     food: 'refrigerated kosher dill spears pickles',
     price: '$2.99  24 fl. oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans food you feel good about',
     food: 'refrigerated kosher dill mini pickles',
     price: '$2.99  24 fl. oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans food you feel good about',
     food: 'refrigerated kosher dill halves pickles',
     price: '$2.99  32 fl. oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'nardone bros.',
     food: 'pizza, family size',
     price: '32 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: "longo's",
     food: 'pizza crusts, tavern style',
     price: '13 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: "longo's",
     food: 'pizza crusts, sicilian',
     price: '32 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans food you feel good about',
     food: 'whipped mashed potatoes, family pack',
     price: '$5.49  48 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans food you feel good about',
     food: 'whipped mashed potatoes',
     price: '$3.19  24 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans food you feel good about',
     food: 'garlic cheese mashed potatoes',
     price: '$3.19  20 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans food you feel good about',
     food: 'sweet mashed potatoes',
     price: '$3.19  20 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: "reser's american classics",
     food: 'potato salad, original',
     price: '$2.69  1 lb.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: "reser's american classics",
     food: 'macaroni salad',
     price: '$2.69  1 lb.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: "reser's",
     food: 'cole slaw',
     price: '$2.69  15 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'lunchables',
     food: 'lunch combinations, extra cheesy pizza',
     price: '$1.99  4.2 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'lunchables',
     food: 'lunch combinations, turkey & american cracker stackers',
     price: '$1.99  3.4 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'lunchables',
     food: 'lunch combinations, ham & cheddar cracker stackers',
     price: '$1.99  3.5 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'lunchables',
     food: 'lunch combinations, pizza with pepperoni',
     price: '$1.99  4.3 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans organic food you feel good about',
     food: 'sour cream',
     price: '$2.49  16 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans food you feel good about',
     food: 'sour cream, family pack',
     price: '$3.49  48 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans food you feel good about',
     food: 'sour cream',
     price: '$1.39*  16 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans food you feel good about',
     food: 'sour cream',
     price: '$0.99  8 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans food you feel good about',
     food: 'fajita tortilla gordita style, family pack',
     price: '$2.49  30.5 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans organic',
     food: 'stoneground yellow corn tortillas',
     price: '$2.99  12.69 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans food you feel good about',
     food: 'taco tortillas, gordita style',
     price: '$0.99  10 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans food you feel good about',
     food: 'fajita tortillas, gordita style',
     price: '$1.49  15 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans food you feel good about',
     food: 'heavy whipped cream',
     price: '$3.49  14 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans food you feel good about',
     food: 'light whipped cream',
     price: '$3.49  14 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans food you feel good about',
     food: 'light whipped cream',
     price: '$2.19  6.5 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'reddi wip',
     food: 'whipped topping, original',
     price: '$2.79  6.5 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: "fleischmann's activedry",
     food: 'yeast, original',
     price: '$1.29*  0.75 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: "fleischmann's rapidrise",
     food: 'yeast, instant, fast acting',
     price: '$1.29*  0.75 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: "fleischmann's",
     food: 'yeast, active dry, original',
     price: '$4.69  4 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: "fleischmann's",
     food: 'yeast, pizza crust',
     price: '$1.29*  0.75 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans food you feel good about',
     food: 'plain nonfat greek yogurt, family pack',
     price: '$3.99  32 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans food you feel good about',
     food: 'vanilla nonfat greek yogurt, family pack',
     price: '$3.99  32 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans food you feel good about',
     food: 'vanilla lowfat yogurt',
     price: '$1.99  32 oz.'
   },
   {
-    category: 'diary',
+    category: 'dairy',
     brand: 'wegmans food you feel good about',
     food: 'plain lowfat yogurt',
     price: '$1.99  32 oz.'
@@ -2740,7 +2740,7 @@ const foods = [
   {
     category: 'frozen',
     brand: 'wegmans food you feel good about',
-    food: 'fudge bars, no sugar added',
+    food: 'fudge bars',
     price: '$3.69  25 fl. oz.'
   },
   {
@@ -3124,7 +3124,7 @@ const foods = [
   {
     category: 'pantry',
     brand: 'wegmans organic food you feel good about',
-    food: 'applesauce, no sugar added',
+    food: 'applesauce',
     price: '$2.79  24 oz.'
   },
   {
@@ -4013,12 +4013,6 @@ const foods = [
   {
     category: 'organic',
     brand: 'wegmans food you feel good about',
-    food: 'peanut butter dark chocolate wholesum bars, 12 pack',
-    price: '$11.99  16.8 oz.'
-  },
-  {
-    category: 'organic',
-    brand: 'wegmans food you feel good about',
     food: 'wholesum bars, family pack, 24 bars',
     price: '$19.99  33.6 oz.'
   },
@@ -4702,12 +4696,6 @@ const foods = [
     brand: 'wegmans food you feel good about',
     food: 'rosemary',
     price: '$1.29  0.25 oz.'
-  },
-  {
-    category: 'produce',
-    brand: 'wegmans organic',
-    food: 'lemon ginger cayenne juice',
-    price: '$6.00  14.5 fl. oz.'
   },
   {
     category: 'produce',

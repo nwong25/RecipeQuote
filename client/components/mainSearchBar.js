@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {typeSearchInput, fetchRecipes, getData} from '../store/recipe'
-import {Link, Redirect, withRouter} from 'react-router-dom'
+import {withRouter} from 'react-router-dom'
 
 export class MainSearchBar extends Component {
   constructor() {

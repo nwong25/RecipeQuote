@@ -87,7 +87,7 @@ img {
 }
 
 nav {
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   display: flex;
   width: 100vw;
@@ -95,7 +95,6 @@ nav {
 
 nav .links {
   float: center;
-  height: 1.5em;
   color: #2db92d;
   text-decoration: none;
   font-size: 14pt;
@@ -150,7 +149,7 @@ nav .links {
   height: 30px;
   margin: 20px 0;
   text-align: center;
-  width: 95%;
+  width: 100%;
 }
 
 .nav-search-btn {
@@ -232,4 +231,11 @@ table#table {
 
 .visit-recipe {
   border-radius: 30px;
+  font-size: 13pt;
+  background-color: #2db92d;
+  color: white;
+}
+
+.div-button {
+  padding-bottom: 25pt;
 }
