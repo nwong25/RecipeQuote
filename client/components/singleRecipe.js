@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import {withRouter, Link} from 'react-router-dom'
+import {withRouter} from 'react-router-dom'
 import {fetchRecipes, getData, postRecipeCost} from '../store/recipe'
 import {fetchFood} from '../store/food'
 
