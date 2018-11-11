@@ -24,22 +24,22 @@ class Routes extends Component {
     return (
       <Switch>
         {/* Routes placed here are available to all visitors */}
-        {/* <Route path="/recipes/search/:idx" component={SingleRecipe} /> */}
-        <Route path="/login" component={Login} />
-        <Route path="/signup" component={Signup} />
-        <Route path="/recipes/search/0" component={SingleRecipe} />
+        <Route path="/recipes/search/:idx" component={SingleRecipe} />
+        {/* <Route path="/login" component={Login} />
+        <Route path="/signup" component={Signup} /> */}
+        {/* <Route path="/recipes/search/0" component={SingleRecipe} /> */}
 
         <Route exact path="/:search" component={SearchBarResults} />
 
-        {isLoggedIn && (
-          <Switch>
-            {/* Routes placed here are only available after logging in */}
-            <Route path="/home" component={UserHome} />
+        {/* {isLoggedIn && (
+          <Switch> */}
+        {/* Routes placed here are only available after logging in */}
+        {/* <Route path="/home" component={UserHome} />
           </Switch>
-        )}
+        )} */}
         {/* Displays our Login component as a fallback */}
         <Route path="/" component={MainSearchBar} />
-        <Route component={Login} />
+        {/* <Route component={Login} /> */}
       </Switch>
     )
   }

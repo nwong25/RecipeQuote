@@ -13,22 +13,22 @@ export class SearchBarResults extends Component {
 
     return (
       <div>
-        <div className="sides">
+        <div className="result-container">
           <ul className="left-side">
             {recipes.map((recipe, idx) => {
               return (
                 <div className="wrapper" key={recipe.recipe.url}>
                   <Link to={`/recipes/search/${idx}`}>
                     <div className="wrapper">
-                      <h2>{recipe.recipe.label}</h2>
+                      <h2 className="recipe-name">{recipe.recipe.label}</h2>
                       <img className="recipe-image" src={recipe.recipe.image} />
-                      <div className="ingredients">
+                      {/* <div className="ingredients">
                         {recipe.recipe.ingredientLines.map(
                           (ingredient, idx) => {
                             return <li key={idx}>{ingredient}</li>
                           }
                         )}
-                      </div>
+                      </div> */}
                     </div>
                   </Link>
                 </div>

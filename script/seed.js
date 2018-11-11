@@ -1046,12 +1046,6 @@ const foods = [
   },
   {
     category: 'cheese',
-    brand: 'la ferme',
-    food: 'buerre de barrate- french butter with sea salt',
-    price: '$17.99/lb  1 each approx. 0.5 lb.'
-  },
-  {
-    category: 'cheese',
     brand: 'wegmans cave-ripened',
     food: '1916 aged goat cheese',
     price: '$9.99  4.25 oz.'
@@ -1140,12 +1134,7 @@ const foods = [
     food: 'petits toasts',
     price: '$2.99  2.8 oz.'
   },
-  {
-    category: 'cheese',
-    brand: 'mitica',
-    food: 'marcona almonds- fried and salted',
-    price: '$17.99/lb  1 each approx. 0.5 lb.'
-  },
+
   {
     category: 'cheese',
     brand: 'wegmans food you feel good about',
@@ -1158,12 +1147,7 @@ const foods = [
     food: '3 month aged manchego cheese- mild',
     price: '$10.99/lb  1 each approx. 0.5 lb.'
   },
-  {
-    category: 'cheese',
-    brand: 'wegmans food you feel good about',
-    food: 'aged 8 months manchego cheese -intense',
-    price: '$17.99/lb  1 each approx. 0.5 lb.'
-  },
+
   {
     category: 'cheese',
     brand: 'wegmans food you feel good about',
@@ -2905,8 +2889,14 @@ const foods = [
   },
   {
     category: 'pantry',
-    brand: 'wegmans organic',
+    brand: 'morton',
     food: 'all-purpose flour',
+    price: '$2.99  26 oz.'
+  },
+  {
+    category: 'pantry',
+    brand: 'wegmans organic',
+    food: 'sea salt',
     price: '$2.99  32 oz.'
   },
   {
@@ -3917,18 +3907,6 @@ const foods = [
     brand: 'wegmans organic',
     food: 'firm tofu',
     price: '$1.99  14 oz.'
-  },
-  {
-    category: 'organic',
-    brand: 'wegmans organic',
-    food: 'cranberry peach kombucha',
-    price: '$2.49  12 fl. oz.'
-  },
-  {
-    category: 'organic',
-    brand: 'wegmans organic',
-    food: 'ginger honey lemon kombucha',
-    price: '$2.49  12 fl. oz.'
   },
   {
     category: 'organic',

@@ -7,7 +7,7 @@ import SearchBar from './searchBar'
 
 const Navbar = ({handleClick, isLoggedIn}) => (
   <div className="nav-bar">
-    <h1 clasName="recipe-title">Recipe Quote</h1>
+    <h1 className="recipe-title">Recipe Quote</h1>
     <nav>
       {isLoggedIn ? (
         <div>
@@ -22,12 +22,12 @@ const Navbar = ({handleClick, isLoggedIn}) => (
       ) : (
         <div>
           {/* The navbar will show these links before you log in */}
-          <Link to="/login" className="links">
+          {/* <Link to="/login" className="links">
             Login
           </Link>
           <Link to="/signup" className="links">
             Sign Up
-          </Link>
+          </Link> */}
           <Link to="/" className="links">
             Home
           </Link>

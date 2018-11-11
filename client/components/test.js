@@ -4,18 +4,18 @@ import {withRouter, Link} from 'react-router-dom'
 import {fetchRecipes, getData, postRecipeCost} from '../store/recipe'
 import {fetchFood} from '../store/food'
 
-// const selectedRecipe = {
-//   recipe: {
-//     label: 'Chicken Teriyaki',
-//     image:
-//       'https://www.edamam.com/web-img/262/262b4353ca25074178ead2a07cdf7dc1.jpg',
-//     ingredientLines: [
-//       '1/2 cup (125ml) mirin',
-//       '1/2 cup (125ml) soy sauce',
-//       'One 2-inch (5cm) piece of fresh ginger, peeled and grated'
-//     ]
-//   }
-// }
+const selectedRecipe = {
+  recipe: {
+    label: 'Chicken Teriyaki',
+    image:
+      'https://www.edamam.com/web-img/262/262b4353ca25074178ead2a07cdf7dc1.jpg',
+    ingredientLines: [
+      '1/2 cup (125ml) mirin',
+      '1/2 cup (125ml) soy sauce',
+      'One 2-inch (5cm) piece of fresh ginger, peeled and grated'
+    ]
+  }
+}
 
 let ingred = {}
 
@@ -76,21 +76,42 @@ const doNotInclude = [
   'garnish',
   'large',
   'small',
-  'medium',
-  'optional',
-  'ground'
+  'medium'
 ]
 
-export class SingleRecipe extends Component {
+export class Test extends Component {
   constructor() {
     super()
     this.state = {}
     this.handleChange = this.handleChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
+    // this.handleSubmit = this.handleSubmit.bind(this)
   }
   componentDidMount() {
     this.props.loadFood()
-    this.props.postRecipeCost(ingred)
+    // {
+    //   selectedRecipe.recipe.ingredientLines.map((ingredient, idx) => {
+    //     const words = ingredient.toLowerCase().split(' ')
+
+    //     const referenceWord = words
+    //       .filter(word => {
+    //         return !doNotInclude.includes(word) && !/\d/.test(word)
+    //       })
+    //       .join(' ')
+
+    //     const foodLookUp = this.props.food
+    //       .reduce((basket, foodItem) => {
+    //         if (foodItem.food.includes(referenceWord)) {
+    //           basket.push(foodItem.price)
+    //         }
+    //         return basket
+    //       }, [])
+    //       .join('')
+    //       .slice(1, 5)
+    //     ingred[ingredient] = foodLookUp
+    //     this.props.postRecipeCost((ingred[ingredient] = foodLookUp))
+    //   })
+    // }
+    // this.setState(ingred)
   }
   handleChange(event) {
     ingred[event.target.name] = event.target.value
@@ -108,13 +129,37 @@ export class SingleRecipe extends Component {
   }
 
   render() {
-    const selectedRecipe = this.props.recipe[this.props.match.params.idx]
+    // const selectedRecipe = this.props.recipe[this.props.match.params.idx]
     const foodList = this.props.food
     let totalCost = []
     let stateTotal
     let allCost
+    console.log('whattttttup', ingred)
+    console.log('the stateeeee', this.state)
     console.log('recipeCost', this.props.recipeCost)
-    console.log('the link', selectedRecipe.recipe.url)
+    {
+      selectedRecipe.recipe.ingredientLines.map((ingredient, idx) => {
+        const words = ingredient.toLowerCase().split(' ')
+
+        const referenceWord = words
+          .filter(word => {
+            return !doNotInclude.includes(word) && !/\d/.test(word)
+          })
+          .join(' ')
+
+        const foodLookUp = foodList
+          .reduce((basket, foodItem) => {
+            if (foodItem.food.includes(referenceWord)) {
+              basket.push(foodItem.price)
+            }
+            return basket
+          }, [])
+          .join('')
+          .slice(1, 5)
+
+        ingred[ingredient] = foodLookUp
+      })
+    }
 
     return (
       <div className="single-recipe-container">
@@ -157,7 +202,21 @@ export class SingleRecipe extends Component {
               const update = foodLookUp
                 ? ((price = `$${Number(foodLookUp).toFixed(2)}`),
                   totalCost.push(Number(foodLookUp)))
-                : (price = (
+                : // ((price = (
+                  //   <form id="search-bar" onSubmit={this.handleSubmit}>
+                  //     <div className="search-bar-form">
+                  //       <input
+                  //         className="form-control textbox"
+                  //         type="text"
+                  //         value={this.state.ingredient}
+                  //         name={ingredient}
+                  //         onChange={this.handleChange}
+                  //         placeholder="Enter Estimated Price"
+                  //       />
+                  //     </div>
+                  //   </form>
+                  // )),
+                  (price = (
                     <div className="search-bar-form">
                       <input
                         className="form-control textbox"
@@ -183,6 +242,28 @@ export class SingleRecipe extends Component {
                 return basket
               }, stateTotal)
 
+              let buttonClick
+
+              {
+                foodLookUp ? (
+                  (buttonClick = (
+                    <button
+                      onClick={() => allCost - totalCost[idx]}
+                      className="x-button"
+                    >
+                      X
+                    </button>
+                  ))
+                ) : (
+                  <button
+                    onClick={() => this.setState({[ingredient]: ''})}
+                    className="x-button"
+                  >
+                    X
+                  </button>
+                )
+              }
+
               console.log('the real total', allCost)
               return (
                 <tbody key={ingredient}>
@@ -190,32 +271,22 @@ export class SingleRecipe extends Component {
                     <td className="info">{ingredient}</td>
                     <td className="info">{price}</td>
                     <td>
-                      <button
-                        id="remove-cost-btn"
+                      {buttonClick}
+                      {/* <button
                         onClick={() => this.setState({[ingredient]: ''})}
                         className="x-button"
                       >
                         X
-                      </button>
+                      </button> */}
                     </td>
                   </tr>
                 </tbody>
               )
             })}
           </table>
+          <p />
           <div className="total-cost">
             <h3>Estimated Total Cost ${allCost.toFixed(2)}</h3>
-
-            <div className="disclaimer">
-              Please note ingredient prices may vary based on store and location
-            </div>
-            <div>
-              <a href={selectedRecipe.recipe.url}>
-                <button className="visit-recipe">
-                  See Recipe Instructions
-                </button>
-              </a>
-            </div>
           </div>
         </div>
       </div>
@@ -236,6 +307,23 @@ const mapDispatchToProps = dispatch => ({
   postRecipeCost: newIngredient => dispatch(postRecipeCost(newIngredient))
 })
 
-export default withRouter(
-  connect(mapStateToProps, mapDispatchToProps)(SingleRecipe)
-)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Test))
+
+// {
+//   selectedRecipe.recipe.ingredientLines.map((ingredient, idx) => {
+//     const words = ingredient.split(' ')
+//     const referenceWord = words
+//       .filter(word => {
+//         return !doNotInclude.includes(word) && !/\d/.test(word)
+//       })
+//       .join(' ')
+//     console.log('reference word', referenceWord)
+//     const test = foodList.filter(foodItem => {
+//       if (foodItem.food.includes(referenceWord)) {
+//         return foodItem.price.slice(0, 5)
+//       }
+//     })
+//     console.log(test)
+//     return <li key={idx}>{ingredient}</li>
+//   })
+// }
