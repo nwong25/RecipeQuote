@@ -1,6 +1,6 @@
 # Recipe Quote
 
-An early stage prototype of an application that will estimate the ingredient costs for a recipe.
+An early stage prototype of an application that will estimate the initial cost of buying ingredients.
 
 #To run the application
 -npm install
