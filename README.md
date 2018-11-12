@@ -5,4 +5,4 @@ An early stage prototype of an application that will estimate the ingredient cos
 #To run the application
 -npm install
 -npm run seed
--npm run-start-dev
+-npm start
