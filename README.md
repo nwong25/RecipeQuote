@@ -1,6 +1,6 @@
 # Recipe Quote
 
-See how much it'll cost you before commiting to a recipe!
+See how much it'll cost you before committing to a recipe!
 
 An early stage prototype of an application that will estimate the initial cost of ingredients for recipes.
 
