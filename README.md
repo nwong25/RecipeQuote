@@ -4,7 +4,7 @@ See how much it'll cost you before committing to a recipe!
 
 An early stage prototype of an application that will estimate the initial cost of ingredients for recipes. This is still a work in progress. 
 
-# To run the application
+To run the application
 -npm install
 -npm run seed
 -npm start
