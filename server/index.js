@@ -31,7 +31,7 @@ module.exports = app
  * Node process on process.env
  */
 if (process.env.NODE_ENV === 'development') {
-  require('../localSecrets')
+  require('../secrets')
 }
 
 // passport registration
