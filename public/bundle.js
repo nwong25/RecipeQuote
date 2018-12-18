@@ -685,8 +685,6 @@ function (_Component) {
       var totalCost = [];
       var stateTotal;
       var allCost;
-      console.log('recipeCost', this.props.recipeCost);
-      console.log('the link', selectedRecipe.recipe.url);
       return _react.default.createElement("div", {
         className: "single-recipe-container"
       }, _react.default.createElement("div", {
@@ -735,7 +733,6 @@ function (_Component) {
           basket = basket + currentValue;
           return basket;
         }, stateTotal);
-        console.log('the real total', allCost);
         return _react.default.createElement("tbody", {
           key: ingredient
         }, _react.default.createElement("tr", null, _react.default.createElement("td", {

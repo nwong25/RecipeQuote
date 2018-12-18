@@ -113,8 +113,6 @@ export class SingleRecipe extends Component {
     let totalCost = []
     let stateTotal
     let allCost
-    console.log('recipeCost', this.props.recipeCost)
-    console.log('the link', selectedRecipe.recipe.url)
 
     return (
       <div className="single-recipe-container">
@@ -183,7 +181,6 @@ export class SingleRecipe extends Component {
                 return basket
               }, stateTotal)
 
-              console.log('the real total', allCost)
               return (
                 <tbody key={ingredient}>
                   <tr>
