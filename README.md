@@ -2,7 +2,7 @@
 
 See how much it'll cost you before committing to a recipe!
 
-An early stage prototype of an application that will estimate the initial cost of ingredients for recipes. This is still a work in progress. 
+An early stage prototype of an application that will estimate the initial cost of ingredients for recipes. This is still a work in progress. Until ingredient matching is improved, users can enter in prices for ingredients not matched by the app.
 
 Deployed at https://recipe-quote.herokuapp.com/
 
