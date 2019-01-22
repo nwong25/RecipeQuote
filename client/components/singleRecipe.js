@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import {withRouter} from 'react-router-dom'
 import {fetchRecipes, getData, postRecipeCost} from '../store/recipe'
 import {fetchFood} from '../store/food'
+import SingleIngredient from './singleIngredient'
 
 // const selectedRecipe = {
 //   recipe: {
@@ -16,8 +17,6 @@ import {fetchFood} from '../store/food'
 //     ]
 //   }
 // }
-
-let ingred = {}
 
 const doNotInclude = [
   'and',
@@ -82,37 +81,34 @@ const doNotInclude = [
 ]
 
 export class SingleRecipe extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {}
-    this.handleChange = this.handleChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
+    this.addIngredient = this.addIngredient.bind(this)
+    this.parentHandleChange = this.parentHandleChange.bind(this)
   }
   componentDidMount() {
     this.props.loadFood()
-    this.props.postRecipeCost(ingred)
   }
-  handleChange(event) {
-    ingred[event.target.name] = event.target.value
+  addIngredient(ingredient, price) {
     this.setState({
-      [event.target.name]: event.target.value
+      [ingredient]: price
     })
     this.props.postRecipeCost(this.state)
   }
 
-  handleSubmit(event) {
-    event.preventDefault()
+  parentHandleChange(event) {
     this.setState({
-      [event.target.name]: ''
+      [event.target.name]: event.target.value
     })
   }
 
   render() {
     const selectedRecipe = this.props.recipe[this.props.match.params.idx]
-    const foodList = this.props.food
-    let totalCost = []
-    let stateTotal
-    let allCost
+    let allCost = Object.values(this.state).reduce((basket, currentValue) => {
+      basket = basket + Number(currentValue)
+      return basket
+    }, 0)
 
     return (
       <div className="single-recipe-container">
@@ -131,72 +127,15 @@ export class SingleRecipe extends Component {
                 <th className="table-label">Estimated Initial Cost</th>
               </tr>
             </thead>
-            {selectedRecipe.recipe.ingredientLines.map((ingredient, idx) => {
-              const words = ingredient.toLowerCase().split(' ')
-
-              const referenceWord = words
-                .filter(word => {
-                  return !doNotInclude.includes(word) && !/\d/.test(word)
-                })
-                .join(' ')
-
-              const foodLookUp = foodList
-                .reduce((basket, foodItem) => {
-                  if (foodItem.food.includes(referenceWord)) {
-                    basket.push(foodItem.price)
-                  }
-                  return basket
-                }, [])
-                .join('')
-                .slice(1, 5)
-
-              let price
-
-              const update = foodLookUp
-                ? ((price = `$${Number(foodLookUp).toFixed(2)}`),
-                  totalCost.push(Number(foodLookUp)))
-                : (price = (
-                    <div className="search-bar-form">
-                      <input
-                        className="form-control textbox"
-                        type="text"
-                        name={ingredient}
-                        value={this.state.ingredient}
-                        onChange={this.handleChange}
-                        placeholder="Enter Estimated Price"
-                      />
-                    </div>
-                  ))
-
-              stateTotal = Object.values(this.state).reduce(
-                (basket, currentValue) => {
-                  basket = basket + Number(currentValue)
-                  return basket
-                },
-                0
-              )
-
-              allCost = totalCost.reduce((basket, currentValue) => {
-                basket = basket + currentValue
-                return basket
-              }, stateTotal)
-
+            {selectedRecipe.recipe.ingredientLines.map(ingredient => {
               return (
-                <tbody key={ingredient}>
-                  <tr>
-                    <td className="info">{ingredient}</td>
-                    <td className="info">{price}</td>
-                    <td>
-                      <button
-                        id="remove-cost-btn"
-                        onClick={() => this.setState({[ingredient]: ''})}
-                        className="x-button"
-                      >
-                        X
-                      </button>
-                    </td>
-                  </tr>
-                </tbody>
+                <SingleIngredient
+                  key={ingredient}
+                  onClick={this.onClick}
+                  ingredient={ingredient}
+                  addIngredient={this.addIngredient}
+                  parentHandleChange={this.parentHandleChange}
+                />
               )
             })}
           </table>

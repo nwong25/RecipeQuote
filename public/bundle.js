@@ -577,6 +577,197 @@ exports.default = _default;
 
 /***/ }),
 
+/***/ "./client/components/singleIngredient.js":
+/*!***********************************************!*\
+  !*** ./client/components/singleIngredient.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = exports.SingleIngredient = void 0;
+
+var _react = _interopRequireWildcard(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _reactRedux = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+
+var _reactRouterDom = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+
+var _recipe = __webpack_require__(/*! ../store/recipe */ "./client/store/recipe.js");
+
+var _food = __webpack_require__(/*! ../store/food */ "./client/store/food.js");
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+var doNotInclude = ['and', 'of', 'tablespoons', 'tablespoon', 'teaspoon', 'teaspoons', 'cup', 'cups', '.lb', '.lbs', 'pound', 'pounds', 'ounce', 'ounces', 'oz', 'the', 'tbsp', 'tsp', 'quarts', 'pints', 'qts', 'pts', 'preferably', 'sifted', 'to', 'from', 'handful', 'removed', 'pinch', 'rinsed', 'stems', 'for', 'at', 'room temperature', 'room', 'temperature', 'chopped', 'shredded', 'whole', 'peeled', 'cut', 'uncooked', 'freshly', 'grated', '¼', '½', '¾', 'grams', 'stewed', 'strained', 'minced', 'finely', 'additional', 'garnish', 'large', 'small', 'medium', 'optional', 'ground'];
+
+var SingleIngredient =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(SingleIngredient, _Component);
+
+  function SingleIngredient(props) {
+    var _this;
+
+    _classCallCheck(this, SingleIngredient);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(SingleIngredient).call(this, props));
+    _this.state = _defineProperty({}, props.ingredient, '');
+    _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _this.addItem = _this.addItem.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    return _this;
+  }
+
+  _createClass(SingleIngredient, [{
+    key: "componentDidMount",
+    value: function () {
+      var _componentDidMount = _asyncToGenerator(
+      /*#__PURE__*/
+      regeneratorRuntime.mark(function _callee() {
+        return regeneratorRuntime.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return this.props.loadFood();
+
+              case 2:
+                _context.next = 4;
+                return this.addItem();
+
+              case 4:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, this);
+      }));
+
+      return function componentDidMount() {
+        return _componentDidMount.apply(this, arguments);
+      };
+    }()
+  }, {
+    key: "handleChange",
+    value: function handleChange(event) {
+      this.setState(_defineProperty({}, event.target.name, event.target.value));
+      this.props.postRecipeCost(this.state);
+      this.props.parentHandleChange(event);
+    }
+  }, {
+    key: "addItem",
+    value: function addItem() {
+      var _this2 = this;
+
+      var foodList = this.props.food;
+      var ingredient = this.props.ingredient;
+      var words = ingredient.toLowerCase().split(' ');
+      var referenceWord = words.filter(function (word) {
+        return !doNotInclude.includes(word) && !/\d/.test(word);
+      }).join(' ');
+      foodList.forEach(function (foodItem) {
+        if (foodItem.food.includes(referenceWord)) {
+          _this2.setState(_defineProperty({}, ingredient, "".concat(foodItem.price.slice(1, 5))));
+
+          _this2.props.addIngredient(ingredient, "".concat(foodItem.price.slice(1, 5)));
+        }
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this3 = this;
+
+      var ingredient = this.props.ingredient;
+      return _react.default.createElement("tbody", {
+        key: ingredient
+      }, _react.default.createElement("tr", null, _react.default.createElement("td", {
+        className: "info"
+      }, ingredient), _react.default.createElement("td", {
+        className: "info"
+      }, "$", _react.default.createElement("input", {
+        className: "recipe-price",
+        type: "text",
+        name: ingredient,
+        value: this.state[ingredient],
+        onChange: this.handleChange,
+        placeholder: this.state.ingredient ? this.state.ingredient : 'Enter Price'
+      }), _react.default.createElement("button", {
+        id: "remove-cost-btn",
+        onClick: function onClick() {
+          return _this3.setState(_defineProperty({}, ingredient, ''));
+        },
+        className: "clear-button"
+      }, "Already Have"))));
+    }
+  }]);
+
+  return SingleIngredient;
+}(_react.Component);
+
+exports.SingleIngredient = SingleIngredient;
+
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    recipeSearchInput: state.recipe.recipeSearchInput,
+    recipe: state.recipe.recipes,
+    food: state.food,
+    recipeCost: state.recipe.recipeCost
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    searching: function searching(title) {
+      return dispatch((0, _recipe.fetchRecipes)(title));
+    },
+    initialLoad: function initialLoad() {
+      return dispatch((0, _recipe.getData)());
+    },
+    loadFood: function loadFood() {
+      return dispatch((0, _food.fetchFood)());
+    },
+    postRecipeCost: function postRecipeCost(newIngredient) {
+      return dispatch((0, _recipe.postRecipeCost)(newIngredient));
+    }
+  };
+};
+
+var _default = (0, _reactRouterDom.withRouter)((0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(SingleIngredient));
+
+exports.default = _default;
+
+/***/ }),
+
 /***/ "./client/components/singleRecipe.js":
 /*!*******************************************!*\
   !*** ./client/components/singleRecipe.js ***!
@@ -601,6 +792,10 @@ var _reactRouterDom = __webpack_require__(/*! react-router-dom */ "./node_module
 var _recipe = __webpack_require__(/*! ../store/recipe */ "./client/store/recipe.js");
 
 var _food = __webpack_require__(/*! ../store/food */ "./client/store/food.js");
+
+var _singleIngredient = _interopRequireDefault(__webpack_require__(/*! ./singleIngredient */ "./client/components/singleIngredient.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
@@ -636,7 +831,6 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 //     ]
 //   }
 // }
-var ingred = {};
 var doNotInclude = ['and', 'of', 'tablespoons', 'tablespoon', 'teaspoon', 'teaspoons', 'cup', 'cups', '.lb', '.lbs', 'pound', 'pounds', 'ounce', 'ounces', 'oz', 'the', 'tbsp', 'tsp', 'quarts', 'pints', 'qts', 'pts', 'preferably', 'sifted', 'to', 'from', 'handful', 'removed', 'pinch', 'rinsed', 'stems', 'for', 'at', 'room temperature', 'room', 'temperature', 'chopped', 'shredded', 'whole', 'peeled', 'cut', 'uncooked', 'freshly', 'grated', '¼', '½', '¾', 'grams', 'stewed', 'strained', 'minced', 'finely', 'additional', 'garnish', 'large', 'small', 'medium', 'optional', 'ground'];
 
 var SingleRecipe =
@@ -644,15 +838,15 @@ var SingleRecipe =
 function (_Component) {
   _inherits(SingleRecipe, _Component);
 
-  function SingleRecipe() {
+  function SingleRecipe(props) {
     var _this;
 
     _classCallCheck(this, SingleRecipe);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(SingleRecipe).call(this));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(SingleRecipe).call(this, props));
     _this.state = {};
-    _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_assertThisInitialized(_this)));
-    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _this.addIngredient = _this.addIngredient.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _this.parentHandleChange = _this.parentHandleChange.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     return _this;
   }
 
@@ -660,20 +854,17 @@ function (_Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.props.loadFood();
-      this.props.postRecipeCost(ingred);
     }
   }, {
-    key: "handleChange",
-    value: function handleChange(event) {
-      ingred[event.target.name] = event.target.value;
-      this.setState(_defineProperty({}, event.target.name, event.target.value));
+    key: "addIngredient",
+    value: function addIngredient(ingredient, price) {
+      this.setState(_defineProperty({}, ingredient, price));
       this.props.postRecipeCost(this.state);
     }
   }, {
-    key: "handleSubmit",
-    value: function handleSubmit(event) {
-      event.preventDefault();
-      this.setState(_defineProperty({}, event.target.name, ''));
+    key: "parentHandleChange",
+    value: function parentHandleChange(event) {
+      this.setState(_defineProperty({}, event.target.name, event.target.value));
     }
   }, {
     key: "render",
@@ -681,10 +872,10 @@ function (_Component) {
       var _this2 = this;
 
       var selectedRecipe = this.props.recipe[this.props.match.params.idx];
-      var foodList = this.props.food;
-      var totalCost = [];
-      var stateTotal;
-      var allCost;
+      var allCost = Object.values(this.state).reduce(function (basket, currentValue) {
+        basket = basket + Number(currentValue);
+        return basket;
+      }, 0);
       return _react.default.createElement("div", {
         className: "single-recipe-container"
       }, _react.default.createElement("div", {
@@ -702,50 +893,14 @@ function (_Component) {
         className: "table-label"
       }, "Ingredients"), _react.default.createElement("th", {
         className: "table-label"
-      }, "Estimated Initial Cost"))), selectedRecipe.recipe.ingredientLines.map(function (ingredient, idx) {
-        var words = ingredient.toLowerCase().split(' ');
-        var referenceWord = words.filter(function (word) {
-          return !doNotInclude.includes(word) && !/\d/.test(word);
-        }).join(' ');
-        var foodLookUp = foodList.reduce(function (basket, foodItem) {
-          if (foodItem.food.includes(referenceWord)) {
-            basket.push(foodItem.price);
-          }
-
-          return basket;
-        }, []).join('').slice(1, 5);
-        var price;
-        var update = foodLookUp ? (price = "$".concat(Number(foodLookUp).toFixed(2)), totalCost.push(Number(foodLookUp))) : price = _react.default.createElement("div", {
-          className: "search-bar-form"
-        }, _react.default.createElement("input", {
-          className: "form-control textbox",
-          type: "text",
-          name: ingredient,
-          value: _this2.state.ingredient,
-          onChange: _this2.handleChange,
-          placeholder: "Enter Estimated Price"
-        }));
-        stateTotal = Object.values(_this2.state).reduce(function (basket, currentValue) {
-          basket = basket + Number(currentValue);
-          return basket;
-        }, 0);
-        allCost = totalCost.reduce(function (basket, currentValue) {
-          basket = basket + currentValue;
-          return basket;
-        }, stateTotal);
-        return _react.default.createElement("tbody", {
-          key: ingredient
-        }, _react.default.createElement("tr", null, _react.default.createElement("td", {
-          className: "info"
-        }, ingredient), _react.default.createElement("td", {
-          className: "info"
-        }, price), _react.default.createElement("td", null, _react.default.createElement("button", {
-          id: "remove-cost-btn",
-          onClick: function onClick() {
-            return _this2.setState(_defineProperty({}, ingredient, ''));
-          },
-          className: "x-button"
-        }, "X"))));
+      }, "Estimated Initial Cost"))), selectedRecipe.recipe.ingredientLines.map(function (ingredient) {
+        return _react.default.createElement(_singleIngredient.default, {
+          key: ingredient,
+          onClick: _this2.onClick,
+          ingredient: ingredient,
+          addIngredient: _this2.addIngredient,
+          parentHandleChange: _this2.parentHandleChange
+        });
       })), _react.default.createElement("div", {
         className: "total-cost"
       }, _react.default.createElement("h3", null, "Estimated Total Cost $", allCost.toFixed(2)), _react.default.createElement("div", {

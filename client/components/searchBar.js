@@ -46,16 +46,8 @@ export class SearchBar extends Component {
           </div>
           <button className="nav-search-btn" type="submit">
             Search
-            {/* <Link to={`${this.state.recipeSearchInput}`}>Search</Link> */}
           </button>
         </form>
-        {/* {this.props.recipes.length > 0 && (
-          <Redirect
-            to={{
-              pathname: '/search'
-            }}
-          />
-        )} */}
       </div>
     )
   }

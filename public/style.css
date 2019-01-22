@@ -24,17 +24,13 @@ form div {
 
 .container {
   background-image: url('veggies.jpg');
-  padding-top: 45px;
+  padding-top: 45pt;
   display: flex;
   justify-content: center;
+  /* align horizontal */
   align-items: center;
   height: 100vh;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  position: absolute;
-  z-index: -1;
+  /* align vertical */
 }
 
 #table {
@@ -65,13 +61,13 @@ h1 {
 }
 
 table {
-  padding-top: 10px;
+  padding-top: 10pt;
 }
 
 img {
   display: block;
   margin: 0 auto;
-  padding-bottom: 20px;
+  padding-bottom: 20pt;
 }
 
 .total-cost {
@@ -88,8 +84,6 @@ img {
   position: fixed;
   font-style: arial;
   opacity: 0.8;
-  left: 0;
-  top: 0;
 }
 
 nav {
@@ -103,7 +97,7 @@ nav .links {
   float: center;
   color: #2db92d;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 14pt;
   font-style: arial;
 }
 
@@ -174,7 +168,7 @@ nav .links {
 }
 
 h1 .recipe-title {
-  padding-left: 20px;
+  padding-left: 20pt;
 }
 
 li {
@@ -182,7 +176,7 @@ li {
 }
 
 .result-container {
-  padding-top: 45px;
+  padding-top: 45pt;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -210,7 +204,7 @@ ul .wrapper {
 
 .single-recipe-container {
   background-color: white;
-  padding-top: 60px;
+  padding-top: 60pt;
   display: flex;
   justify-content: center;
   /* align horizontal */
@@ -231,17 +225,27 @@ table#table {
 }
 
 .disclaimer {
-  font-size: 7px;
-  padding-bottom: 10px;
+  font-size: 7pt;
+  padding-bottom: 10pt;
 }
 
 .visit-recipe {
   border-radius: 30px;
-  font-size: 13px;
+  font-size: 13pt;
   background-color: #2db92d;
   color: white;
 }
 
 .div-button {
-  padding-bottom: 25px;
+  padding-bottom: 25pt;
+}
+
+.clear-button {
+  margin-left: 10px;
+  background-color: #90ee90;
+}
+
+.recipe-price {
+  font-size: 15px;
+  width: 80px;
 }

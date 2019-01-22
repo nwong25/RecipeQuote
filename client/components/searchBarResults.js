@@ -22,13 +22,6 @@ export class SearchBarResults extends Component {
                     <div className="wrapper">
                       <h2 className="recipe-name">{recipe.recipe.label}</h2>
                       <img className="recipe-image" src={recipe.recipe.image} />
-                      {/* <div className="ingredients">
-                        {recipe.recipe.ingredientLines.map(
-                          (ingredient, idx) => {
-                            return <li key={idx}>{ingredient}</li>
-                          }
-                        )}
-                      </div> */}
                     </div>
                   </Link>
                 </div>
