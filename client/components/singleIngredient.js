@@ -74,6 +74,7 @@ export class SingleIngredient extends Component {
     }
     this.handleChange = this.handleChange.bind(this)
     this.addItem = this.addItem.bind(this)
+    this.clear = this.clear.bind(this)
   }
   async componentDidMount() {
     await this.props.loadFood()
@@ -86,8 +87,15 @@ export class SingleIngredient extends Component {
     this.props.postRecipeCost(this.state)
     this.props.parentHandleChange(event)
   }
+  clear(item) {
+    this.setState({
+      [item]: ''
+    })
+    this.props.parentClear(item)
+  }
 
   addItem() {
+    console.log('props', this.props)
     const foodList = this.props.food
     const ingredient = this.props.ingredient
     const words = ingredient.toLowerCase().split(' ')
@@ -123,7 +131,7 @@ export class SingleIngredient extends Component {
             />
             <button
               id="remove-cost-btn"
-              onClick={() => this.setState({[ingredient]: ''})}
+              onClick={() => this.clear(ingredient)}
               className="clear-button"
             >
               Already Have

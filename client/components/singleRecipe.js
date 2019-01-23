@@ -86,6 +86,7 @@ export class SingleRecipe extends Component {
     this.state = {}
     this.addIngredient = this.addIngredient.bind(this)
     this.parentHandleChange = this.parentHandleChange.bind(this)
+    this.parentClear = this.parentClear.bind(this)
   }
   componentDidMount() {
     this.props.loadFood()
@@ -102,8 +103,14 @@ export class SingleRecipe extends Component {
       [event.target.name]: event.target.value
     })
   }
+  parentClear(item) {
+    this.setState({
+      [item]: ''
+    })
+  }
 
   render() {
+    console.log('whaaa', this.state)
     const selectedRecipe = this.props.recipe[this.props.match.params.idx]
     let allCost = Object.values(this.state).reduce((basket, currentValue) => {
       basket = basket + Number(currentValue)
@@ -135,6 +142,7 @@ export class SingleRecipe extends Component {
                   ingredient={ingredient}
                   addIngredient={this.addIngredient}
                   parentHandleChange={this.parentHandleChange}
+                  parentClear={this.parentClear}
                 />
               )
             })}

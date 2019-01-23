@@ -656,6 +656,7 @@ function (_Component) {
     _this.state = _defineProperty({}, props.ingredient, '');
     _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     _this.addItem = _this.addItem.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _this.clear = _this.clear.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     return _this;
   }
 
@@ -696,10 +697,17 @@ function (_Component) {
       this.props.parentHandleChange(event);
     }
   }, {
+    key: "clear",
+    value: function clear(item) {
+      this.setState(_defineProperty({}, item, ''));
+      this.props.parentClear(item);
+    }
+  }, {
     key: "addItem",
     value: function addItem() {
       var _this2 = this;
 
+      console.log('props', this.props);
       var foodList = this.props.food;
       var ingredient = this.props.ingredient;
       var words = ingredient.toLowerCase().split(' ');
@@ -736,7 +744,7 @@ function (_Component) {
       }), _react.default.createElement("button", {
         id: "remove-cost-btn",
         onClick: function onClick() {
-          return _this3.setState(_defineProperty({}, ingredient, ''));
+          return _this3.clear(ingredient);
         },
         className: "clear-button"
       }, "Already Have"))));
@@ -859,6 +867,7 @@ function (_Component) {
     _this.state = {};
     _this.addIngredient = _this.addIngredient.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     _this.parentHandleChange = _this.parentHandleChange.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _this.parentClear = _this.parentClear.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     return _this;
   }
 
@@ -879,10 +888,16 @@ function (_Component) {
       this.setState(_defineProperty({}, event.target.name, event.target.value));
     }
   }, {
+    key: "parentClear",
+    value: function parentClear(item) {
+      this.setState(_defineProperty({}, item, ''));
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this2 = this;
 
+      console.log('whaaa', this.state);
       var selectedRecipe = this.props.recipe[this.props.match.params.idx];
       var allCost = Object.values(this.state).reduce(function (basket, currentValue) {
         basket = basket + Number(currentValue);
@@ -911,7 +926,8 @@ function (_Component) {
           onClick: _this2.onClick,
           ingredient: ingredient,
           addIngredient: _this2.addIngredient,
-          parentHandleChange: _this2.parentHandleChange
+          parentHandleChange: _this2.parentHandleChange,
+          parentClear: _this2.parentClear
         });
       })), _react.default.createElement("div", {
         className: "total-cost"
