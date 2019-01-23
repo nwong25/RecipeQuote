@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {withRouter, Link} from 'react-router-dom'
-import {fetchRecipes, getData} from '../store/recipe'
+import {fetchRecipes} from '../store/recipe'
 
 export class SearchBarResults extends Component {
   componentDidMount() {
@@ -10,7 +10,13 @@ export class SearchBarResults extends Component {
 
   render() {
     const recipes = this.props.recipe || []
-
+    const upperCase = string => {
+      return string.toUpperCase()
+    }
+    const titleCase = string => {
+      var firstLetterRx = /(^|\s)[a-z]/g
+      return string.replace(firstLetterRx, upperCase)
+    }
     return (
       <div>
         <div className="result-container">
@@ -19,9 +25,15 @@ export class SearchBarResults extends Component {
               return (
                 <div className="wrapper" key={recipe.recipe.url}>
                   <Link to={`/recipes/search/${idx}`}>
-                    <div className="wrapper">
-                      <h2 className="recipe-name">{recipe.recipe.label}</h2>
-                      <img className="recipe-image" src={recipe.recipe.image} />
+                    <div
+                      className="wrapper"
+                      style={{backgroundImage: `url(${recipe.recipe.image})`}}
+                    >
+                      <div className="recipe-box">
+                        <div className="recipe-name">
+                          {`${titleCase(recipe.recipe.label)}`}
+                        </div>
+                      </div>
                     </div>
                   </Link>
                 </div>

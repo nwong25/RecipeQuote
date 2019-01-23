@@ -1,6 +1,5 @@
 body {
   font-family: sans-serif;
-  /* background-image: url('veggies.jpg'); */
   background-color: white;
 }
 
@@ -23,14 +22,20 @@ form div {
 }
 
 .container {
-  background-image: url('veggies.jpg');
+  overflow: hidden;
+  background-image: url(veggies.jpg);
   padding-top: 45pt;
   display: flex;
   justify-content: center;
-  /* align horizontal */
   align-items: center;
-  height: 100vh;
-  /* align vertical */
+  height: 90vh;
+  background-image: url(veggies.jpg);
+  padding-top: 45pt;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-size: cover;
 }
 
 #table {
@@ -39,10 +44,10 @@ form div {
 }
 
 .table-label {
-  background-color: #2db92d;
+  background-color: #90ee90;
   border: 1px solid black;
   padding: 8px;
-  color: white;
+  color: black;
   vertical-align: middle;
   text-align: center;
 }
@@ -54,8 +59,8 @@ form div {
   text-align: center;
 }
 
-h2,
-h1 {
+h1,
+h2 {
   text-align: center;
   align-content: center;
 }
@@ -183,14 +188,16 @@ li {
 }
 
 ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: contents;
 }
 
 ul .wrapper {
-  flex: 1 1 40%;
-  border: 1px solid #e6e6e6;
+  flex: 1 1 18%;
+  border: 1px solid white;
+  height: 22em;
+  width: auto;
+  margin-bottom: 1px;
+  border-radius: 15px;
 }
 
 .recipe-name {
@@ -222,6 +229,8 @@ table#table {
 
 .wrapper {
   display: grid;
+  background-size: cover;
+  background-position: center;
 }
 
 .disclaimer {
@@ -232,8 +241,8 @@ table#table {
 .visit-recipe {
   border-radius: 30px;
   font-size: 13pt;
-  background-color: #2db92d;
-  color: white;
+  background-color: #90ee90;
+  color: black;
 }
 
 .div-button {
@@ -243,9 +252,28 @@ table#table {
 .clear-button {
   margin-left: 10px;
   background-color: #90ee90;
+  border-radius: 25px;
+  background-size: cover;
+  background-position: center;
 }
 
 .recipe-price {
   font-size: 15px;
   width: 80px;
+}
+
+.recipe-box {
+  height: 4em;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  color: white;
+  background-color: lightgreen;
+  border-radius: 10px;
+}
+
+.recipe-name {
+  text-align: center;
+  align-content: center;
+  font-size: 1.2em;
 }

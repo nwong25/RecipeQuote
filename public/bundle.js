@@ -529,6 +529,16 @@ function (_Component) {
     key: "render",
     value: function render() {
       var recipes = this.props.recipe || [];
+
+      var upperCase = function upperCase(string) {
+        return string.toUpperCase();
+      };
+
+      var titleCase = function titleCase(string) {
+        var firstLetterRx = /(^|\s)[a-z]/g;
+        return string.replace(firstLetterRx, upperCase);
+      };
+
       return _react.default.createElement("div", null, _react.default.createElement("div", {
         className: "result-container"
       }, _react.default.createElement("ul", {
@@ -540,13 +550,15 @@ function (_Component) {
         }, _react.default.createElement(_reactRouterDom.Link, {
           to: "/recipes/search/".concat(idx)
         }, _react.default.createElement("div", {
-          className: "wrapper"
-        }, _react.default.createElement("h2", {
+          className: "wrapper",
+          style: {
+            backgroundImage: "url(".concat(recipe.recipe.image, ")")
+          }
+        }, _react.default.createElement("div", {
+          className: "recipe-box"
+        }, _react.default.createElement("div", {
           className: "recipe-name"
-        }, recipe.recipe.label), _react.default.createElement("img", {
-          className: "recipe-image",
-          src: recipe.recipe.image
-        }))));
+        }, "".concat(titleCase(recipe.recipe.label)))))));
       }))));
     }
   }]);
