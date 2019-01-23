@@ -6,8 +6,9 @@ An early stage prototype of an application that will estimate the initial cost o
 
 Deployed at https://recipe-quote.herokuapp.com/
 
-<img width="1257" alt="screen shot 2019-01-22 at 3 43 10 pm" src="https://user-images.githubusercontent.com/38846510/51564726-0fa8f180-1e5e-11e9-824c-cc3e9fce1e7c.png">
-<img width="1255" alt="screen shot 2019-01-22 at 3 52 54 pm" src="https://user-images.githubusercontent.com/38846510/51564728-12a3e200-1e5e-11e9-9a6c-40c3bdf7238d.png">
+<img width="1258" alt="screen shot 2019-01-22 at 9 12 00 pm" src="https://user-images.githubusercontent.com/38846510/51578185-b4412880-1e8a-11e9-95e3-f07795dd54df.png">
+
+<img width="1258" alt="screen shot 2019-01-22 at 9 12 52 pm" src="https://user-images.githubusercontent.com/38846510/51578200-bdca9080-1e8a-11e9-8eb4-9ceb22863e7e.png">
 
 
 To run the application
