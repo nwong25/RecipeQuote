@@ -8,6 +8,9 @@ Deployed at https://recipe-quote.herokuapp.com/
 
 <img width="1258" alt="screen shot 2019-01-22 at 9 12 00 pm" src="https://user-images.githubusercontent.com/38846510/51578185-b4412880-1e8a-11e9-95e3-f07795dd54df.png">
 
+<img width="1258" alt="screen shot 2019-01-22 at 9 12 00 pm" src="https://user-images.githubusercontent.com/38846510/51654732-474f9080-1f67-11e9-96dd-971214ccc528.png">
+
+
 <img width="1258" alt="screen shot 2019-01-22 at 9 12 52 pm" src="https://user-images.githubusercontent.com/38846510/51578200-bdca9080-1e8a-11e9-8eb4-9ceb22863e7e.png">
 
 
