@@ -181,7 +181,7 @@ li {
 }
 
 .result-container {
-  padding-top: 45pt;
+  padding-top: 4.2em;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -267,13 +267,26 @@ table#table {
   align-items: center;
   justify-content: center;
   display: flex;
-  color: white;
-  background-color: lightgreen;
   border-radius: 10px;
+  align-self: flex-start;
 }
 
 .recipe-name {
   text-align: center;
   align-content: center;
   font-size: 1.2em;
+  color: white;
+  font-weight: bold;
+}
+
+.layer {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(116, 119, 121, 0.35);
+  position: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
 }

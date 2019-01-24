@@ -555,10 +555,12 @@ function (_Component) {
             backgroundImage: "url(".concat(recipe.recipe.image, ")")
           }
         }, _react.default.createElement("div", {
+          className: "layer"
+        }, _react.default.createElement("div", {
           className: "recipe-box"
         }, _react.default.createElement("div", {
           className: "recipe-name"
-        }, "".concat(titleCase(recipe.recipe.label)))))));
+        }, "".concat(titleCase(recipe.recipe.label))))))));
       }))));
     }
   }]);

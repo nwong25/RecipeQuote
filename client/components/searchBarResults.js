@@ -29,9 +29,11 @@ export class SearchBarResults extends Component {
                       className="wrapper"
                       style={{backgroundImage: `url(${recipe.recipe.image})`}}
                     >
-                      <div className="recipe-box">
-                        <div className="recipe-name">
-                          {`${titleCase(recipe.recipe.label)}`}
+                      <div className="layer">
+                        <div className="recipe-box">
+                          <div className="recipe-name">
+                            {`${titleCase(recipe.recipe.label)}`}
+                          </div>
                         </div>
                       </div>
                     </div>
