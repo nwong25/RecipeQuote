@@ -214,7 +214,6 @@ ul .wrapper {
   padding-top: 60pt;
   display: flex;
   justify-content: center;
-  /* align horizontal */
   height: 100vh;
 }
 
@@ -280,13 +279,12 @@ table#table {
 }
 
 .layer {
-  display: flex;
-  justify-content: center;
   background-color: rgba(116, 119, 121, 0.35);
   position: center;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 15px;
+}
+
+@media (max-width: 800px) {
+  .wrapper {
+    width: calc(50% - 16px);
+  }
 }
