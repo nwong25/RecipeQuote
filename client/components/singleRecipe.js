@@ -110,7 +110,6 @@ export class SingleRecipe extends Component {
   }
 
   render() {
-    console.log('whaaa', this.state)
     const selectedRecipe = this.props.recipe[this.props.match.params.idx]
     let allCost = Object.values(this.state).reduce((basket, currentValue) => {
       basket = basket + Number(currentValue)

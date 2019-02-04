@@ -95,7 +95,6 @@ export class SingleIngredient extends Component {
   }
 
   addItem() {
-    console.log('props', this.props)
     const foodList = this.props.food
     const ingredient = this.props.ingredient
     const words = ingredient.toLowerCase().split(' ')
