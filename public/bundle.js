@@ -303,8 +303,6 @@ var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_mod
 
 var _reactRedux = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 
-var _reactRouterDom = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
-
 var _searchBar = _interopRequireDefault(__webpack_require__(/*! ./searchBar */ "./client/components/searchBar.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -312,12 +310,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Navbar = function Navbar() {
   return _react.default.createElement("div", {
     className: "nav-bar"
-  }, _react.default.createElement("nav", null, _react.default.createElement("h1", {
-    className: "recipe-title"
-  }, "Recipe Quote"), _react.default.createElement("br", null), _react.default.createElement("div", null, _react.default.createElement(_searchBar.default, null)), _react.default.createElement(_reactRouterDom.Link, {
-    to: "/",
-    className: "links"
-  }, "Home")), _react.default.createElement("hr", null));
+  }, _react.default.createElement("nav", null, _react.default.createElement(_searchBar.default, null)), _react.default.createElement("hr", null));
 };
 /**
  * CONTAINER
@@ -420,17 +413,22 @@ function (_Component) {
         onSubmit: this.handleSubmit
       }, _react.default.createElement("div", {
         className: "search-bar-form"
-      }, _react.default.createElement("input", {
+      }, _react.default.createElement("h1", {
+        className: "recipe-title"
+      }, "Recipe Quote"), _react.default.createElement("input", {
         className: "nav-bar-textbox",
         type: "text",
         name: "recipeSearchInput",
         value: recipeSearchInput,
         onChange: this.handleChange,
         placeholder: "Find A Recipe Now"
-      })), _react.default.createElement("button", {
+      }), _react.default.createElement("button", {
         className: "nav-search-btn",
         type: "submit"
-      }, "Search")));
+      }, "Search"), _react.default.createElement(_reactRouterDom.Link, {
+        to: "/",
+        className: "links"
+      }, "Home"))));
     }
   }]);
 
@@ -541,8 +539,6 @@ function (_Component) {
 
       return _react.default.createElement("div", null, _react.default.createElement("div", {
         className: "result-container"
-      }, _react.default.createElement("ul", {
-        className: "left-side"
       }, recipes.map(function (recipe, idx) {
         return _react.default.createElement("div", {
           className: "wrapper",
@@ -561,7 +557,7 @@ function (_Component) {
         }, _react.default.createElement("div", {
           className: "recipe-name"
         }, "".concat(titleCase(recipe.recipe.label))))))));
-      }))));
+      })));
     }
   }]);
 
@@ -709,7 +705,6 @@ function (_Component) {
     value: function addItem() {
       var _this2 = this;
 
-      console.log('props', this.props);
       var foodList = this.props.food;
       var ingredient = this.props.ingredient;
       var words = ingredient.toLowerCase().split(' ');
@@ -899,7 +894,6 @@ function (_Component) {
     value: function render() {
       var _this2 = this;
 
-      console.log('whaaa', this.state);
       var selectedRecipe = this.props.recipe[this.props.match.params.idx];
       var allCost = Object.values(this.state).reduce(function (basket, currentValue) {
         basket = basket + Number(currentValue);

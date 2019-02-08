@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {typeSearchInput, fetchRecipes, getData} from '../store/recipe'
-import {withRouter} from 'react-router-dom'
+import {withRouter, Link} from 'react-router-dom'
 
 export class SearchBar extends Component {
   constructor() {
@@ -35,6 +35,8 @@ export class SearchBar extends Component {
       <div>
         <form id="search-bar" onSubmit={this.handleSubmit}>
           <div className="search-bar-form">
+            <h1 className="recipe-title">Recipe Quote</h1>
+
             <input
               className="nav-bar-textbox"
               type="text"
@@ -43,10 +45,13 @@ export class SearchBar extends Component {
               onChange={this.handleChange}
               placeholder="Find A Recipe Now"
             />
+            <button className="nav-search-btn" type="submit">
+              Search
+            </button>
+            <Link to="/" className="links">
+              Home
+            </Link>
           </div>
-          <button className="nav-search-btn" type="submit">
-            Search
-          </button>
         </form>
       </div>
     )

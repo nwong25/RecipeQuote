@@ -23,7 +23,6 @@ form div {
 
 .container {
   overflow: hidden;
-  background-image: url(veggies.jpg);
   padding-top: 45pt;
   display: flex;
   justify-content: center;
@@ -173,7 +172,7 @@ nav .links {
 }
 
 h1 .recipe-title {
-  padding-left: 20pt;
+  margin-right: 5em;
 }
 
 li {
@@ -185,19 +184,6 @@ li {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-}
-
-ul {
-  display: contents;
-}
-
-ul .wrapper {
-  flex: 1 1 18%;
-  border: 1px solid white;
-  height: 22em;
-  width: auto;
-  margin-bottom: 1px;
-  border-radius: 15px;
 }
 
 .recipe-name {
@@ -230,6 +216,12 @@ table#table {
   display: grid;
   background-size: cover;
   background-position: center;
+  flex: 1 1 18%;
+  border: 1px solid white;
+  height: 22em;
+  width: auto;
+  margin-bottom: 1px;
+  border-radius: 15px;
 }
 
 .disclaimer {
@@ -283,8 +275,29 @@ table#table {
   position: center;
 }
 
+@media (max-width: 1000px) {
+  .wrapper {
+    width: auto;
+    flex: 1 1 25%;
+  }
+}
+
 @media (max-width: 800px) {
   .wrapper {
-    width: calc(50% - 16px);
+    width: auto;
+    flex: 1 1 35%;
   }
+}
+
+@media (max-width: 500px) {
+  .wrapper {
+    width: auto;
+    flex: 1 1 100%;
+  }
+}
+
+.search-bar-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

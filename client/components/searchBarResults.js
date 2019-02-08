@@ -20,28 +20,26 @@ export class SearchBarResults extends Component {
     return (
       <div>
         <div className="result-container">
-          <ul className="left-side">
-            {recipes.map((recipe, idx) => {
-              return (
-                <div className="wrapper" key={recipe.recipe.url}>
-                  <Link to={`/recipes/search/${idx}`}>
-                    <div
-                      className="wrapper"
-                      style={{backgroundImage: `url(${recipe.recipe.image})`}}
-                    >
-                      <div className="layer">
-                        <div className="recipe-box">
-                          <div className="recipe-name">
-                            {`${titleCase(recipe.recipe.label)}`}
-                          </div>
+          {recipes.map((recipe, idx) => {
+            return (
+              <div className="wrapper" key={recipe.recipe.url}>
+                <Link to={`/recipes/search/${idx}`}>
+                  <div
+                    className="wrapper"
+                    style={{backgroundImage: `url(${recipe.recipe.image})`}}
+                  >
+                    <div className="layer">
+                      <div className="recipe-box">
+                        <div className="recipe-name">
+                          {`${titleCase(recipe.recipe.label)}`}
                         </div>
                       </div>
                     </div>
-                  </Link>
-                </div>
-              )
-            })}
-          </ul>
+                  </div>
+                </Link>
+              </div>
+            )
+          })}
         </div>
       </div>
     )
