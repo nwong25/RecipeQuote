@@ -213,7 +213,7 @@ table#table {
   display: inline-table;
 }
 
-.wrapper {
+.result-container .wrapper {
   display: grid;
   background-size: cover;
   background-position: center;
