@@ -169,10 +169,11 @@ nav .links {
   box-shadow: none;
   background-color: white;
   color: black;
+  margin-left: 0.5em;
 }
 
-h1 .recipe-title {
-  margin-right: 5em;
+.recipe-title {
+  margin-right: 0.7em;
 }
 
 li {
