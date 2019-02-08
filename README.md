@@ -26,3 +26,5 @@ To run the application
 3) Fix the search bar in mobile view
 4) Add in ability to sign up/login
 5) Ability to save recipes to your private dashboard
+6) Incoporate design library
+7) Expand to react-native
