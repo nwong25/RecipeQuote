@@ -22,3 +22,7 @@ To run the application
 
 # Future Improvements
 1) Switch out recipe API and integrate a search engine and natural language parser for more accurate matching
+2) Fix the nav bar layout
+3) Fix the search bar in mobile view
+4) Add in ability to sign up/login
+5) Ability to save recipes to your private dashboard
