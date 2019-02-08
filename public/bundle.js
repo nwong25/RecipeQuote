@@ -731,6 +731,8 @@ function (_Component) {
         className: "info"
       }, ingredient), _react.default.createElement("td", {
         className: "info"
+      }, _react.default.createElement("div", {
+        className: "price-input"
       }, "$", _react.default.createElement("input", {
         className: "recipe-price",
         type: "text",
@@ -738,7 +740,7 @@ function (_Component) {
         value: this.state[ingredient],
         onChange: this.handleChange,
         placeholder: this.state.ingredient ? this.state.ingredient : 'Enter Price'
-      }), _react.default.createElement("button", {
+      })), _react.default.createElement("button", {
         id: "remove-cost-btn",
         onClick: function onClick() {
           return _this3.clear(ingredient);
@@ -910,7 +912,9 @@ function (_Component) {
       }, _react.default.createElement("img", {
         className: "single-recipe-image",
         src: selectedRecipe.recipe.image
-      })), _react.default.createElement("table", {
+      })), _react.default.createElement("div", {
+        className: "table-container"
+      }, _react.default.createElement("table", {
         id: "table"
       }, _react.default.createElement("thead", null, _react.default.createElement("tr", null, _react.default.createElement("th", {
         className: "table-label"
@@ -925,7 +929,7 @@ function (_Component) {
           parentHandleChange: _this2.parentHandleChange,
           parentClear: _this2.parentClear
         });
-      })), _react.default.createElement("div", {
+      }))), _react.default.createElement("div", {
         className: "total-cost"
       }, _react.default.createElement("h3", null, "Estimated Total Cost $", allCost.toFixed(2)), _react.default.createElement("div", {
         className: "disclaimer"

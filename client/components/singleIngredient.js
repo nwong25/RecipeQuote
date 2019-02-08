@@ -118,16 +118,18 @@ export class SingleIngredient extends Component {
         <tr>
           <td className="info">{ingredient}</td>
           <td className="info">
-            $<input
-              className="recipe-price"
-              type="text"
-              name={ingredient}
-              value={this.state[ingredient]}
-              onChange={this.handleChange}
-              placeholder={
-                this.state.ingredient ? this.state.ingredient : 'Enter Price'
-              }
-            />
+            <div className="price-input">
+              $<input
+                className="recipe-price"
+                type="text"
+                name={ingredient}
+                value={this.state[ingredient]}
+                onChange={this.handleChange}
+                placeholder={
+                  this.state.ingredient ? this.state.ingredient : 'Enter Price'
+                }
+              />
+            </div>
             <button
               id="remove-cost-btn"
               onClick={() => this.clear(ingredient)}

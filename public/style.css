@@ -40,6 +40,7 @@ form div {
 #table {
   font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
   border-collapse: collapse;
+  display: table;
 }
 
 .table-label {
@@ -204,13 +205,10 @@ li {
   height: 100vh;
 }
 
-.single-recipe-image {
+img .single-recipe-image {
   height: 25em;
   width: auto;
-}
-
-table#table {
-  display: inline-table;
+  display: flex;
 }
 
 .result-container .wrapper {
@@ -277,21 +275,21 @@ table#table {
 }
 
 @media (max-width: 1000px) {
-  .wrapper {
+  .result-container .wrapper {
     width: auto;
     flex: 1 1 25%;
   }
 }
 
 @media (max-width: 800px) {
-  .wrapper {
+  .result-container .wrapper {
     width: auto;
     flex: 1 1 35%;
   }
 }
 
 @media (max-width: 500px) {
-  .wrapper {
+  .result-container .wrapper {
     width: auto;
     flex: 1 1 100%;
   }
@@ -301,4 +299,16 @@ table#table {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.image-div {
+  display: flex;
+}
+
+.table-container {
+  display: flex;
+}
+
+.price-input {
+  white-space: nowrap;
 }

@@ -126,26 +126,28 @@ export class SingleRecipe extends Component {
               src={selectedRecipe.recipe.image}
             />
           </div>
-          <table id="table">
-            <thead>
-              <tr>
-                <th className="table-label">Ingredients</th>
-                <th className="table-label">Estimated Initial Cost</th>
-              </tr>
-            </thead>
-            {selectedRecipe.recipe.ingredientLines.map(ingredient => {
-              return (
-                <SingleIngredient
-                  key={ingredient}
-                  onClick={this.onClick}
-                  ingredient={ingredient}
-                  addIngredient={this.addIngredient}
-                  parentHandleChange={this.parentHandleChange}
-                  parentClear={this.parentClear}
-                />
-              )
-            })}
-          </table>
+          <div className="table-container">
+            <table id="table">
+              <thead>
+                <tr>
+                  <th className="table-label">Ingredients</th>
+                  <th className="table-label">Estimated Initial Cost</th>
+                </tr>
+              </thead>
+              {selectedRecipe.recipe.ingredientLines.map(ingredient => {
+                return (
+                  <SingleIngredient
+                    key={ingredient}
+                    onClick={this.onClick}
+                    ingredient={ingredient}
+                    addIngredient={this.addIngredient}
+                    parentHandleChange={this.parentHandleChange}
+                    parentClear={this.parentClear}
+                  />
+                )
+              })}
+            </table>
+          </div>
           <div className="total-cost">
             <h3>Estimated Total Cost ${allCost.toFixed(2)}</h3>
 
